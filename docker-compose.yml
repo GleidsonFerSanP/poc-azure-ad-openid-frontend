@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  apache:
+    image: apache-node
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /home/gleidson/workspace/poc-azure-ad-auth-flow/build:/app
+      - /home/gleidson/workspace/poc-azure-ad-auth-flow-backend:/app/api
+      - /home/gleidson/apache-vhosts/my_vhost.conf:/opt/docker/etc/httpd/my_vhost.conf
+      - /home/gleidson/certificados:/opt/docker/etc/httpd/ssl/
