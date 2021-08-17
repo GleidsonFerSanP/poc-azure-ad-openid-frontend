@@ -7,7 +7,7 @@ import * as msal from "@azure/msal-browser";
  * https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#openid-connect-scopes
  */
 export const loginRequest = {
-    scopes: ["openid", "profile", "email"]
+    scopes: ["openid", "profile", "email", "api://dc7db730-b19a-4f04-9ee4-b6cc437bbdf4/access_as_user"]
 };
 
 /**
@@ -16,18 +16,19 @@ export const loginRequest = {
  */
 export const tokenRequest = {
     scopes: ["openid", "profile", "email"],
-    forceRefresh: false
+    forceRefresh: false,
 };
 
 export const Auth = {
-  isAuthenticated: false
+  isAuthenticated: false,
+  accessToken: null
 };
 
 const msalConfig = {
        auth: {
         clientId: "808ed646-3ddb-4b9c-9538-0cabfca6e59f",
         authority: "https://login.microsoftonline.com/9417a790-2c7e-41ed-97a2-81ed87965dee/",
-        redirectUri: "https://web.poc.auth.com/",
+        redirectUri: "https://web.poc.auth.com/login",
         tenantId: "9417a790-2c7e-41ed-97a2-81ed87965dee"
     },
     cache: {

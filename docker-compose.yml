@@ -9,5 +9,8 @@ services:
     volumes:
       - /home/gleidson/workspace/poc-azure-ad-auth-flow/build:/app
       - /home/gleidson/workspace/poc-azure-ad-auth-flow-backend:/app/api
-      - /home/gleidson/apache-vhosts/my_vhost.conf:/opt/docker/etc/httpd/my_vhost.conf
+      - /home/gleidson/apache-vhosts/vhost_front.conf:/opt/docker/etc/httpd/vhost_front.conf
+      - /home/gleidson/apache-vhosts/vhost_api.conf:/etc/apache2/sites-enabled/vhost_api.conf
       - /home/gleidson/certificados:/opt/docker/etc/httpd/ssl/
+
+      

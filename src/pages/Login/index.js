@@ -20,6 +20,7 @@ const handleResponse = (setRedirectToReferrer) => (response) => {
     
     if (response !== null) {
         Auth.isAuthenticated = true;
+        Auth.accessToken = response.accessToken;
         setRedirectToReferrer(true);
     } else {
         selectAccount();
